@@ -1,0 +1,19 @@
+\begin{table}[!ht]
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{@{}lccccccccc@{}}
+  \toprule
+  \textbf{CSIQ answered by...} & \multicolumn{3}{c}{\textbf{Retrieved (\%)}} & \multicolumn{3}{c}{\textbf{Errors, investigator (\%)}} & \multicolumn{3}{c}{\textbf{Errors, model (\%)}} 
+  \\
+  & \textbf{Lovdata} & \textbf{A} & \textbf{B} & \textbf{Lovdata} & \textbf{A} & \textbf{B} & \textbf{Lovdata} & \textbf{A} & \textbf{B}
+  \\ \midrule
+  Both investigator \& model & 16.4 & 9.9 & 16.2 & 0 & 0.6 & 0 & 0 & 11.4 & 36.4
+  \\
+  Investigator, exclusively & 42.1 & 49.2 & 50.2 & 0 & 1.9 & 4.0 & - & - & - 
+  \\
+  Model, exclusively & 41.4 & 40.7 & 33.5 & - & - & - & 72.4 & 57.3 & 45.4
+  \\ \bottomrule
+  \end{tabular}%
+  }
+  \caption{Retrieval rates and errors of results from the model and investigators on Lovdata, case A and B. Errors are defined as the \textit{false discovery rate} -- the ratio of retrieved documents that were not related to the respective cases.}
+  \label{tab:combined-errors}
+\end{table}
