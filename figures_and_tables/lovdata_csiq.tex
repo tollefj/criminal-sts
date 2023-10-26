@@ -1,0 +1,50 @@
+\begin{table}[!htbp]
+  \setlength{\tabcolsep}{6pt}
+  \centering
+  % \resizebox{0.5\textwidth}{!}{%
+  \centering
+    \begin{tabular}{lclclll}
+    \toprule
+    Query for CSIQ & $N_{tot}$ & Model & $N_{ret}$ & $P$ & $R$ & $F_1$ \\
+    \midrule
+    % "IB1": "person med tilknytning til boligen / adressen",
+    % "IB2": "årsak til dødsfallet",
+    % "IB3": "fornærmede / avdøde involvert i konflikt",
+    % "IB4": "informasjon om våpenet"
+    % 1 & 17 & Person with a connection to the house \\
+    % 2 & 17 & Injuries and cause of death \\
+    % 3 & 5 & Deceased in conflict \\
+    % 4 & 5 & Information about the weapon\\
+    \multirow{6}{*}{\shortstack[l]{\textbf{CSIQ 1:}\\Who has a connection to the house/residence\\\textbf{Query (translated):}\\Person with a connection to the house/address\\\textbf{Query (original):}\\Person med tilknytning til boligen/adressen}} & \multirow{6}{*}{17} & SBERT     & 14 & \textbf{0.571} & \textbf{0.471} &\textbf{ 0.516} \\
+                         & & Fasttext  & 16 & 0.375 & 0.353 & 0.364 \\
+                         & & string    & 10 & 0.3   & 0.176 & 0.222 \\
+                         & & TF-IDF     & 15 & 0.467 & 0.412 & 0.437 \\
+                         & & BM-25      & 15 & 0.400   & 0.353 & 0.375 \\
+                         & & jaccard   & 13 & 0.462 & 0.353 & 0.400   \\
+    \midrule
+    \multirow{6}{*}{\shortstack[l]{\textbf{CSIQ 2:}\\What has happened -- cause of death\\\textbf{Query (translated):}\\Injuries and cause of death\\\textbf{Query (original):}\\Skader og dødsårsak}} & \multirow{6}{*}{17}  & SBERT     & 11 & \textbf{0.636} & \textbf{0.412} & \textbf{0.500}   \\
+                         & & Fasttext  & 13 & 0.462 & 0.353 & 0.400   \\
+                         & & string    & 10 & 0.400   & 0.235 & 0.296 \\
+                         & & TF-IDF     & 10 & 0.400   & 0.235 & 0.296 \\
+                         & & BM-25      & 10 & 0.400   & 0.235 & 0.296 \\
+                         & & jaccard   & 11 & 0.273 & 0.176 & 0.214 \\
+    \midrule
+    \multirow{6}{*}{\shortstack[l]{\textbf{CSIQ 3:}\\Was the offended involved in any conflict?\\\textbf{Query (translated):}\\Offended/deceased in conflict\\\textbf{Query (original):}\\Fornærmede i konflikt}} & \multirow{6}{*}{5} & SBERT     & 5  & \textbf{0.400}   & \textbf{0.400}   & \textbf{0.400}   \\
+                         & & Fasttext  & 5  & 0   & 0   & 0   \\
+                         & & string    & 4  & 0   & 0   & 0   \\
+                         & & TF-IDF     & 4  & 0   & 0   & 0   \\
+                         & & BM-25      & 4  & 0   & 0   & 0   \\
+                         & & jaccard   & 4  & 0   & 0   & 0   \\
+    \midrule
+    \multirow{6}{*}{\shortstack[l]{\textbf{CSIQ 4:}\\What do we know about the weapon?\\\textbf{Query (translated):}\\Information about the weapon\\\textbf{Query (original):}\\Informasjon om våpenet}} & \multirow{6}{*}{5} & SBERT     & 5  & \textbf{0.400}   & \textbf{0.400}   & \textbf{0.400}   \\
+                         & & Fasttext  & 4  & 0   & 0   & 0   \\
+                         & & string    & 0  & 0   & 0   & 0   \\
+                         & & TF-IDF     & 0  & 0   & 0   & 0   \\
+                         & & BM-25      & 0  & 0   & 0   & 0   \\
+                         & & jaccard   & 0  & 0   & 0   & 0   \\
+    \bottomrule
+    \end{tabular}%
+  % }
+  \caption{Results for CSIQs on Lovdata. The queries show the reformulated CSIQ, translated from Norwegian. $N_{tot}$ is the number of ground truth documents, and $N_{ret}$ is the number of unique retrieved documents per model, given Q.}
+  \label{tab:lovdata-results}
+\end{table}%

@@ -1,0 +1,17 @@
+\begin{table}[!ht]
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{@{}llllll@{}}
+  \toprule
+  \textbf{Data} & \textbf{CSIQ} & \textbf{String match} & \textbf{Query SBERT} & \textbf{\begin{tabular}[c]{@{}l@{}}Result\\ String\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Result\\SBERT\end{tabular}} \\ \midrule
+  Lovdata & Who had access to the house? & house & access to the house & 7 & 25 \\ \midrule
+  Lovdata & What is the cause of death? & cause of death & the cause of death & 9 & 20 \\ \midrule
+  Case A & Who has a black van? & black van & black van & 21 & \textgreater{}50 \\ \midrule
+  Case A & \begin{tabular}[c]{@{}l@{}}Has the deceased been\\ involved in any conflict?\end{tabular} & \begin{tabular}[c]{@{}l@{}}conflict with \textless{}NAME\textgreater{}\end{tabular} & conflict with \textless{}NAME\textgreater{} & 1 & 27 \\ \midrule
+  Case B & \begin{tabular}[c]{@{}l@{}}Who had access\\ to the weapon?\end{tabular} & access to weapon & access to weapon & 25 & 47 \\ \midrule
+  Case B & \begin{tabular}[c]{@{}l@{}}What rumors exist\\ about what happened?\end{tabular} & rumors about & rumors about what happened & 29 & \textgreater{}50 \\ \bottomrule
+  \end{tabular}%
+  }
+  \caption{Samples of results for string match and SBERT queries for a sample of CSIQs.}
+  \label{tab:case-examples}
+\end{table}
+  
